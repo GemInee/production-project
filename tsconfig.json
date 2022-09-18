@@ -10,6 +10,20 @@
       "esModuleInterop": true,
       "allowSyntheticDefaultImports": true,
       "baseUrl": ".",
+      "plugins": [
+        {
+          "name": "typescript-plugin-css-modules",
+          "options": {
+            "classnameTransform": "asIs",
+            "customMatcher": "\\.module\\.(c|le|sa|sc)ss$",
+            "customRenderer": false,
+            "dotenvOptions": {},
+            "postcssOptions": {},
+            "rendererOptions": {},
+            "namedExports": true
+          }
+        }
+      ]
     },
     "ts-node": {
         "compilerOptions": {
