@@ -3,6 +3,11 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { RuleSetRule } from "webpack";
 
 export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ["@svgr/webpack"],
+  };
+
   const cssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -15,14 +20,23 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
           modules: {
             auto: (resPath: string) =>
               Boolean(resPath.includes(".module.scss")),
-            localIdentName: isDev 
-            ? "[path][name]__[local]--[hash:base64:5]" 
-            : "[hash:base64:8]",
+            localIdentName: isDev
+              ? "[path][name]__[local]--[hash:base64:5]"
+              : "[hash:base64:8]",
           },
         },
       },
       // Compiles Sass to CSS
       "sass-loader",
+    ],
+  };
+
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif|woff2|woof)$/i,
+    use: [
+      {
+        loader: "file-loader",
+      },
     ],
   };
 
@@ -32,5 +46,5 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     exclude: /node_modules/,
   };
 
-  return [typescriptLoader, cssLoader];
+  return [fileLoader,svgLoader, typescriptLoader, cssLoader];
 }
