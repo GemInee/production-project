@@ -1,4 +1,4 @@
-import { classNames } from "./classNames"
+import { classNames } from './classNames';
 
 describe('classNames', () => {
     test('whith only first param', () => {
@@ -10,7 +10,7 @@ describe('classNames', () => {
         expect(classNames(
             'someClass',
             {},
-            ['class1', 'class2']
+            ['class1', 'class2'],
         )).toBe(expected);
     });
 
@@ -19,7 +19,7 @@ describe('classNames', () => {
         expect(classNames(
             'someClass',
             { hover: true, selected: true },
-            ['class1', 'class2']
+            ['class1', 'class2'],
         )).toBe(expected);
     });
 
@@ -28,7 +28,7 @@ describe('classNames', () => {
         expect(classNames(
             'someClass',
             { hover: true, selected: false },
-            ['class1', 'class2']
+            ['class1', 'class2'],
         )).toBe(expected);
     });
 
@@ -37,7 +37,7 @@ describe('classNames', () => {
         expect(classNames(
             'someClass',
             { hover: true, selected: undefined },
-            ['class1', 'class2']
+            ['class1', 'class2'],
         )).toBe(expected);
     });
-})
+});

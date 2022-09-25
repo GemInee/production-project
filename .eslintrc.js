@@ -8,7 +8,7 @@ module.exports = {
         'plugin:react/recommended',
         'airbnb',
         'plugin:react/jsx-runtime',
-        'plugin:i18next/recomended',
+        'plugin:i18next/recommended',
     ],
     overrides: [
     ],
@@ -29,7 +29,10 @@ module.exports = {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],
-        'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+        'react/jsx-filename-extension': [
+            2,
+            { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+        ],
         'linebreak-style': 0,
         'import/no-unresolved': 0,
         'import/extensions': 0,
@@ -41,7 +44,8 @@ module.exports = {
         'no-shadow': 0,
         'import/no-extraneous-dependencies': 0,
         'no-underscore-dangle': 0,
-        'i18next/no-literal-string': ['error', {markupOnly: true}],
+        'i18next/no-literal-string': [1, { markupOnly: true }],
+        'max-len': [2, { ignoreComments: true }],
     },
     globals: {
         __IS_DEV__: true,
