@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 
 declare module '*.scss' {
   interface IClassNames {
@@ -9,6 +9,7 @@ declare module '*.scss' {
 }
 
 declare module '*.svg' {
+  // eslint-disable-next-line no-undef
   const SVG: React.VFC<React.SVGProps<SVGSVGElement>>;
   export default SVG;
 }
