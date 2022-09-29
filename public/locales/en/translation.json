@@ -1,7 +1,10 @@
 {
-    "Тестовый перевод": "Test translation",
-    "Перевод": "Translation",
-    "Язык": "English",
-    "Переключить": "Toggle",
-    "Страница не найдена": "Page not found"
+  "Тестовый перевод": "Test translation",
+  "Перевод": "Translation",
+  "Язык": "English",
+  "Переключить": "Toggle",
+  "Страница не найдена": "Page not found",
+  "Произошла непредвиденная ошибка": "Unexpected error",
+  "Обновить страницу": "Reload page",
+  "throw error": "Throw error"
 }
