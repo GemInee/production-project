@@ -10,8 +10,6 @@ module.exports = {
         'plugin:react/jsx-runtime',
         'plugin:i18next/recommended',
     ],
-    overrides: [
-    ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -31,7 +29,7 @@ module.exports = {
         indent: [2, 4],
         'react/jsx-filename-extension': [
             2,
-            { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+            { extensions: ['.js', '.jsx', '.tsx'] },
         ],
         'linebreak-style': 0,
         'import/no-unresolved': 0,
@@ -44,10 +42,24 @@ module.exports = {
         'no-shadow': 0,
         'import/no-extraneous-dependencies': 0,
         'no-underscore-dangle': 0,
-        'i18next/no-literal-string': [1, { markupOnly: true }],
+        'i18next/no-literal-string': [
+            'error',
+            {
+                markupOnly: true,
+                ignoreAttribute: ['data-testid', 'to'],
+            },
+        ],
         'max-len': [2, { code: 120, ignoreComments: true }],
     },
     globals: {
         __IS_DEV__: true,
     },
+    overrides: [
+        {
+            files: ['**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+            },
+        },
+    ],
 };

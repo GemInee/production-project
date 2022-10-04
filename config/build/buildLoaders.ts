@@ -11,9 +11,7 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     const cssLoader = {
         test: /\.s[ac]ss$/i,
         use: [
-            // Creates `style` nodes from JS strings
             isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-            // Translates CSS into CommonJS
             {
                 loader: 'css-loader',
                 options: {
@@ -27,7 +25,6 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
                     },
                 },
             },
-            // Compiles Sass to CSS
             'sass-loader',
         ],
     };
@@ -42,7 +39,7 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     };
 
     const babelLoader = {
-        test: /\.(js|jsx|ts|tsx)$/,
+        test: /\.(js|jsx|tsx)$/,
         exclude: /node_modules/,
         use: {
             loader: 'babel-loader',
@@ -67,5 +64,10 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
         exclude: /node_modules/,
     };
 
-    return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader];
+    return [
+        fileLoader,
+        svgLoader,
+        babelLoader,
+        typescriptLoader,
+        cssLoader];
 }
