@@ -11,3 +11,4 @@ node_modules/
 storybook-static/
 .loki/report.html
 .gitignore
+.loki/report.json
