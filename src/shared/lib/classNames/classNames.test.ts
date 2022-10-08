@@ -2,11 +2,11 @@ import { classNames } from 'shared/lib/classNames/classNames';
 
 describe('classNames', () => {
     test('whith only first param', () => {
-        expect(classNames('someClass')).toBe('someClass ');
+        expect(classNames('someClass')).toBe('someClass');
     });
 
     test('with additional classes', () => {
-        const expected = 'someClass class1 class2 ';
+        const expected = 'someClass class1 class2';
         expect(classNames(
             'someClass',
             {},
@@ -15,7 +15,7 @@ describe('classNames', () => {
     });
 
     test('with mods', () => {
-        const expected = 'someClass class1 class2 hover,selected';
+        const expected = 'someClass class1 class2 hover selected';
         expect(classNames(
             'someClass',
             { hover: true, selected: true },
