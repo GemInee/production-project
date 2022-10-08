@@ -1,6 +1,6 @@
 /.vscode
-/build
-/node_modules
+build/
+node_modules/
 .idea/.gitignore
 .idea/modules.xml
 .idea/production-project.iml
@@ -8,3 +8,4 @@
 .idea/codeStyles/codeStyleConfig.xml
 .idea/codeStyles/Project.xml
 .idea/inspectionProfiles/Project_Default.xml
+storybook-static/
