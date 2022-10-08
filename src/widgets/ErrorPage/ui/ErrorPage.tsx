@@ -21,5 +21,3 @@ export const ErrorPage = ({ className }: ErrorPageProps) => {
         </div>
     );
 };
-
-export default ErrorPage;

@@ -22,5 +22,3 @@ export const BugButton = () => {
         </button>
     );
 };
-
-export default BugButton;

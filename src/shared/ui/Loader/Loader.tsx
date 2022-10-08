@@ -12,5 +12,3 @@ export const Loader = ({ className }: LoaderProps) => (
         <div />
     </div>
 );
-
-export default Loader;
