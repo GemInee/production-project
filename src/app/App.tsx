@@ -6,7 +6,6 @@ import { userActions } from 'entities/User';
 import { useDispatch } from 'react-redux';
 import { AppRouter } from './providers/router';
 import { useTheme } from './providers/ThemeProvider';
-// import { useTheme } from './providers/ThemeProvider';
 
 function App() {
     const { theme } = useTheme();
