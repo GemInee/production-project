@@ -24,5 +24,10 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         resolve: buildResolvers(options),
         devtool: isDev ? 'eval-source-map' : undefined,
         devServer: isDev ? buildDevServer(options) : undefined,
+        performance: {
+            hints: 'warning',
+            maxAssetSize: 1000000,
+            maxEntrypointSize: 1000000,
+        },
     };
 }
