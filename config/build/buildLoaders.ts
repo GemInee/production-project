@@ -1,10 +1,11 @@
 import webpack from 'webpack';
-import { buildBabelLoader } from './loaders/buildBabelLoader';
-import { buildCssLoaders } from './loaders/buildCssLoaders';
+import { buildCssLoader } from './loaders/buildCssLoader';
 import { BuildOptions } from './types/config';
+import { buildBabelLoader } from './loaders/buildBabelLoader';
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     const { isDev } = options;
+
     const svgLoader = {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
@@ -12,7 +13,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 
     const babelLoader = buildBabelLoader(options);
 
-    const cssLoader = buildCssLoaders(isDev);
+    const cssLoader = buildCssLoader(isDev);
 
     // Если не используем тайпскрипт - нужен babel-loader
     const typescriptLoader = {

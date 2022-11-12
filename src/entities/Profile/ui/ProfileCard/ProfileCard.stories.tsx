@@ -19,12 +19,12 @@ export const Primary = Template.bind({});
 Primary.args = {
     data: {
         username: 'admin',
-        age: 36,
-        country: Country.Russia,
-        lastname: 'Gladyshev',
-        first: 'Pavel',
-        city: 'Tomsk',
-        currency: Currency.RUB,
+        age: 22,
+        country: Country.Ukraine,
+        lastname: 'ulbi tv',
+        first: 'asd',
+        city: 'asf',
+        currency: Currency.USD,
         avatar,
     },
 };
