@@ -9,8 +9,7 @@ interface ErrorBoundaryState {
     hasError: boolean;
 }
 
-class ErrorBoundary
-    extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
     constructor(props: ErrorBoundaryProps) {
         super(props);
         this.state = { hasError: false };
@@ -23,6 +22,7 @@ class ErrorBoundary
 
     componentDidCatch(error: Error, errorInfo: ErrorInfo) {
         // You can also log the error to an error reporting service
+        // logErrorToMyService(error, errorInfo);
         console.log(error, errorInfo);
     }
 
@@ -44,3 +44,5 @@ class ErrorBoundary
 }
 
 export default ErrorBoundary;
+// Если нужно использовать интернационализацию в классовом компоненте
+// export default withTranslation()(ErrorBoundary);
